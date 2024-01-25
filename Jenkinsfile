@@ -9,6 +9,14 @@
                 archiveArtifacts artifacts: 'dist/trainSchedule.zip'
             }
         }
+     stage('Deploy'){
+      steps{
+       withCredentials([usernamePassword(credentialsID: 'sshLogin', passwordVariable: 'passwd', usernameVariable: 'user')])
+                {
+                 echo "Hello"   
+                }    
+      }
+     }
        
     }
 }
