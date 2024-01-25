@@ -11,7 +11,7 @@
         }
      stage('Deploy'){
       steps{
-       withCredentials([usernamePassword(credentialsId: 'sshLogin', passwordVariable: 'passwd', usernameVariable: 'user')])
+       withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')])
                 {
                  echo "The username is $user and the password is $passwd"   
                 }    
