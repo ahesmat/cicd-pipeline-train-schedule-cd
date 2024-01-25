@@ -13,7 +13,7 @@
       steps{
        withCredentials([usernamePassword(credentialsId: 'sshLogin', passwordVariable: 'passwd', usernameVariable: 'user')])
                 {
-                 echo "Hello"   
+                 echo "The username is $user and the password is $passwd"   
                 }    
       }
      }
