@@ -13,7 +13,21 @@
       steps{
        withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')])
                 {
-                 echo "The username is $user and the password is $passwd"   
+                 sshPublisher(
+                 continueOnError: false, failOnError: true,
+                  publishers: [
+                     sshCredentials: (username: "${user}", encryptedPassphrase: "{$passwd}")
+                      configName: "staging"
+                   transfers: [
+                        sshTransfer(
+                         sourceFiles:""
+                         removePrefix:""
+                         remoteDirectory:""
+                         execCommand:
+                       )  
+                      ]
+                   ]
+                  )
                 }    
       }
      }
