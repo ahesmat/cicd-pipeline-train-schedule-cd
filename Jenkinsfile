@@ -55,8 +55,12 @@
                    branch 'master'
                  }
                steps {
-                 input(message: 'Good to go?')
+                 input
                  {
+                 message  "Good to go?"
+                   ok "yes"
+                 }
+                 
        withCredentials([usernamePassword(credentialsId: 'webserver_login',usernameVariable: 'user', passwordVariable: 'passwd' )])
                 {
                  sshPublisher(
@@ -79,7 +83,7 @@
                   )
                 } 
                  }
-      }
+      
      }
        
       }
