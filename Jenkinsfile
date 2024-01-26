@@ -15,14 +15,14 @@
          stage('Deploy')
             {
                steps {
-       withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')])
+       withCredentials([usernamePassword(credentialsId: 'webserver_login',usernameVariable: 'user', passwordVariable: 'passwd' )])
                 {
                  sshPublisher(
                  continueOnError: false, failOnError: true,
                   publishers: [
                    sshPublisherDesc(
                     configName: 'staging',
-                     sshCredentials: [username: "${user}", encryptedPassphrase: "{$passwd}"],
+                     sshCredentials: [username: "$user", encryptedPassphrase: "$passwd"],
                       
                    transfers: [
                         sshTransfer(
