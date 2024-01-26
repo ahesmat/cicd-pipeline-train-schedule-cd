@@ -10,9 +10,6 @@
             }
         }
      stage('Deploy'){
-      when{
-       branch 'master'
-      }
       steps{
        withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')])
                 {
