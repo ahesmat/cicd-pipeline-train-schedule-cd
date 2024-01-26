@@ -14,10 +14,11 @@
             }
          stage('Deploy To Staging')
             {
-               steps {
-                 when {
+               when {
                    branch 'master'
                  }
+               steps {
+                
        withCredentials([usernamePassword(credentialsId: 'webserver_login',usernameVariable: 'user', passwordVariable: 'passwd' )])
                 {
                  sshPublisher(
