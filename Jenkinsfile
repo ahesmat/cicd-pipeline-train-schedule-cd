@@ -11,6 +11,7 @@
                     sh 'echo \"test5\"'
                     archiveArtifacts artifacts: 'dist/trainSchedule.zip'
                       }
+              milestone(1)
             }
          stage('Print branch name'){
            steps{
