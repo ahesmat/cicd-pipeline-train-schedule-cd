@@ -10,8 +10,7 @@
                     sh './gradlew build --no-daemon'
                     sh 'echo \"test5\"'
                     archiveArtifacts artifacts: 'dist/trainSchedule.zip'
-                      }
-              milestone(1)
+                      } 
             }
          stage('Print branch name'){
            steps{
@@ -59,6 +58,7 @@
                  script
                  {
                  input(message:"Good to go?",ok:"yes")
+                   milestone(1)
                  }
                  
        withCredentials([usernamePassword(credentialsId: 'webserver_login',usernameVariable: 'user', passwordVariable: 'passwd' )])
