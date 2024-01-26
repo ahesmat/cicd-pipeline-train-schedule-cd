@@ -12,9 +12,12 @@
                     archiveArtifacts artifacts: 'dist/trainSchedule.zip'
                       }
             }
-         stage('Deploy')
+         stage('Deploy To Staging')
             {
                steps {
+                 when {
+                   branch 'master'
+                 }
        withCredentials([usernamePassword(credentialsId: 'webserver_login',usernameVariable: 'user', passwordVariable: 'passwd' )])
                 {
                  sshPublisher(
