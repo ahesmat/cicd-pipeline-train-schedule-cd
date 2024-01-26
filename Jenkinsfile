@@ -66,7 +66,7 @@
                  continueOnError: false, failOnError: true,
                   publishers: [
                    sshPublisherDesc(
-                    configName: 'staging',
+                    configName: 'production',
                      sshCredentials: [username: "$user", encryptedPassphrase: "$passwd"],
                       
                    transfers: [
