@@ -12,6 +12,13 @@
                     archiveArtifacts artifacts: 'dist/trainSchedule.zip'
                       }
             }
+         stage('Print branch name'){
+           steps{
+           script {
+                    echo "Current Branch Name: ${env.BRANCH_NAME}"
+                }
+           }
+         }
          stage('Deploy To Staging')
             {
                when {
