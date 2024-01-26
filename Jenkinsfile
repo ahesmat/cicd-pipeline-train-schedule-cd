@@ -20,7 +20,7 @@
                  continueOnError: false, failOnError: true,
                   publishers: [
                      sshCredentials (username: "${user}", encryptedPassphrase: "{$passwd}"),
-                      configName: "staging"
+                      configName: "staging",
                    transfers: [
                         sshTransfer(
                          sourceFiles:"dist/trainSchedule.zip"
