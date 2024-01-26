@@ -55,7 +55,7 @@
                    branch 'master'
                  }
                steps {
-                 input('Good to go?')
+                 input(message: 'Good to go?')
                  {
        withCredentials([usernamePassword(credentialsId: 'webserver_login',usernameVariable: 'user', passwordVariable: 'passwd' )])
                 {
