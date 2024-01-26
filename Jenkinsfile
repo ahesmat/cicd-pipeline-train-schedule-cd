@@ -1,4 +1,4 @@
- pipeline
+  pipeline
 {
     agent any
     stages 
@@ -21,8 +21,9 @@
                  continueOnError: false, failOnError: true,
                   publishers: [
                    sshPublisherDesc(
+                    configName: 'staging',
                      sshCredentials: [username: "${user}", encryptedPassphrase: "{$passwd}"],
-                      configName: 'staging',
+                      
                    transfers: [
                         sshTransfer(
                          sourceFiles:'dist/trainSchedule.zip',
