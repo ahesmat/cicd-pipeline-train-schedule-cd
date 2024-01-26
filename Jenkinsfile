@@ -14,7 +14,7 @@
        branch 'master'
       }
       steps{
-       withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')]),
+       withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')])
                 {
                  sshPublisher:(
                  continueOnError: false, failOnError: true,
