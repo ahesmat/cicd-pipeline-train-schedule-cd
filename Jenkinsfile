@@ -16,7 +16,7 @@
       steps{
        withCredentials([usernamePassword(credentialsId: 'web_login', passwordVariable: 'passwd', usernameVariable: 'user')])
                 {
-                 sshPublisher:(
+                 sshPublisher(
                  continueOnError: false, failOnError: true,
                   publishers: [
                      sshCredentials: (username: "${user}", encryptedPassphrase: "{$passwd}"),
