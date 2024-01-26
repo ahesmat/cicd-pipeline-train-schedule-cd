@@ -19,7 +19,7 @@
                  sshPublisher(
                  continueOnError: false, failOnError: true,
                   publishers: [
-                     sshCredentials: (username: "${user}", encryptedPassphrase: "{$passwd}"),
+                     sshCredentials: (username: "${user}", encryptedPassphrase: "{$passwd}")
                       configName: "staging"
                    transfers: [
                         sshTransfer(
